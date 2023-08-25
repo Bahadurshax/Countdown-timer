@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/countdown-timer-with-flipping-card-animation-_z62cmd5fb)
+- Live Site URL: [View live](https://bahadurshax.github.io/Countdown-timer/)
 
 ## My process
 
