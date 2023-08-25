@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    font-family: 'Red Hat Text', sans-serif;
+    min-height: 100vh;
+    background-color: hsl(235, 16%, 14%);
+    background-image: url('images/bg-stars.svg'), url('images/pattern-hills.svg'), linear-gradient(hsl(235, 16%, 14%), hsl(266, 19%, 14%));
+    background-position: top left, right bottom, left bottom;
+    background-repeat: no-repeat;
+    padding-top: 10rem;
+}
+
+.title {
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.timer-container {
+    display: flex;
+    gap: clamp(1rem, 0.6479rem + 1.3146vw, 2rem);
+    justify-content: center;
+    margin: 5rem 0;
+}
+
+.card {
+    --height: 140px;
+    --card-bg: hsl(236, 21%, 26%);
+    --br-radius: 6px;
+
+
+    height: var(--height);
+    aspect-ratio: 1 / 1;
+    color: hsl(345, 95%, 68%);
+    box-shadow: 0px 10px 0px 0px hsl(234, 17%, 12%);
+    border-radius: var(--br-radius);
+    position: relative;
+}
+
+.card::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+    border-radius: calc(var(--height) / 2);
+    border: 6px solid hsl(234, 17%, 12%);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+}
+
+.card::before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0px;
+    border-radius: calc(var(--height) / 2);
+    border: 6px solid hsl(234, 17%, 12%);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+    z-index: 1;
+}
+
+.card-title {
+    display: block;
+    color: hsl(237, 18%, 59%);
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 5px;
+    margin: 1.5rem 0;
+}
+
+.top-half, .bottom-half {
+    text-align: center;
+    border-radius: var(--br-radius);
+    height: calc(var(--height) / 2);
+    background-color: var(--card-bg);
+    overflow: hidden;
+    position: relative;
+}
+
+.top-half {
+    filter: brightness(80%);
+}
+
+.top-half span, .bottom-half span {
+    display: inline-block;
+    font-size: 5rem;
+    font-family: inherit;
+    font-weight: 700;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.top-half > span {
+    bottom: -52px;
+}
+
+.bottom-half > span {
+    top: -54px;
+}
+
+.flip-top, .flip-bottom {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: calc(var(--height) / 2);
+    background-color: var(--card-bg);
+    border-radius: var(--br-radius);
+    overflow: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.flip-top {
+    filter: brightness(80%);
+    top: 0;
+    transform-origin: bottom;
+}
+
+@keyframes flipTop {
+    0% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(-90deg);
+    }
+}
+
+.flip-bottom {
+    bottom: 0;
+    transform-origin: top;
+    transform: rotateX(90deg);
+}
+
+@keyframes flipBottom {
+    0% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+.flip-top > span, 
+.flip-bottom > span {
+    font-size: 5rem;
+    font-weight: 700;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.flip-top > span {
+    bottom: -52px;
+}
+
+.flip-bottom > span {
+    top: -54px;
+}
+
+
+/* ========================= FOOTER STYLES ========================== */
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 18rem;
+}
+
+.social-links > a:hover svg > path {
+    fill: hsl(345, 95%, 68%);
+}
+
+.attribution {
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+.attribution a {
+    color: hsl(345, 95%, 68%);
+}
